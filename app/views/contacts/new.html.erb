@@ -2,6 +2,16 @@
 
 <%= form_for :contact , url: contacts_path do |f| %>
 
+	<% if @contact && @contact.errors.any? %>
+		<div>
+		<ul>
+			<% @contact.errors.full_messages.each do |mess| %>
+				<li><%= mess %></li>
+			<% end %>
+		</ul>
+		</div>
+	<% end %>
+
 	<div>
 		<%= f.label :email %> <br />
 		<%= f.text_field :email %>
