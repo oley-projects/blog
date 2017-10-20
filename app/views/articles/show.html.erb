@@ -1,2 +1,24 @@
 <h3><%= @article.title %></h3>
 <p><%= @article.text %></p>
+
+<%= form_for([@article, @article.comments.build]) do |f| %>
+
+	<div>
+		<%= f.label :author %> <br />
+		<%= f.text_field :author %>
+	</div>
+
+	<br />
+
+	<div>
+		<%= f.label :body %> <br />
+		<%= f.text_area :body %>
+	</div>	
+
+	<br />
+
+	<div>
+		<%= f.submit %> <br />
+	</div>	
+
+<% end %>
