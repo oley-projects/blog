@@ -12,26 +12,25 @@
 	<hr /><br /> <br />
 <% end %>
 
-<h3>Add comment</h3>
+<% if user_signed_in? %>
+	<h3>Add comment</h3>
 
-<%= form_for([@article, @article.comments.build]) do |f| %>
+	<%= form_for([@article, @article.comments.build]) do |f| %>
 
-	<div>
-		<%= f.label :author %> <br />
-		<%= @comment %>
-	</div>
+		<div>
+			<%= f.text_area :body %>
+		</div>	
 
-	<br />
+		<br />
 
-	<div>
-		<%= f.label :body %> <br />
-		<%= f.text_area :body %>
-	</div>	
+		<div>
+			<%= f.submit %> <br />
+		</div>	
 
-	<br />
+	<% end %>
 
-	<div>
-		<%= f.submit %> <br />
-	</div>	
-
+<% else %>
+	<i>Please <%= link_to "sign in", new_user_session_path %> or <%= link_to "register", new_user_registration_path %> to leave comments.</i>
 <% end %>
+
+<hr/>
