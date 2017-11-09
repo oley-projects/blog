@@ -12,27 +12,39 @@
 
   <body>
     <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-        <% if user_signed_in? %>
 
-        Hello, <%= current_user.username %> | <%= link_to 'Sign out', destroy_user_session_path, method: :delete %> 
-
-        <% else %>
-
-        <%= link_to 'Sign in', new_user_session_path %>
-
-        <%end%>
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <%= link_to "Blog", home_index_path %>
         </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-12">
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><%= link_to "Articles", articles_path %></li>
+            <li><%= link_to "New", new_article_path %></li>
+          </ul>
+          <ul class="navbar-right" style="margin-top:2px; margin-bottom:2px">
+               
+            <% if user_signed_in? %>
+            Hello, <%= current_user.username %> | <%= link_to 'Sign out', destroy_user_session_path, method: :delete %> 
+            <% else %>
+            <%= link_to 'Sign in', new_user_session_path %>
+            <%end%>  
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+      </nav>
+ 
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
         <%= yield %>
-        </div>
-      </div>
+
 
     </div>
   </body>
