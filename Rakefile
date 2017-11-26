@@ -3,4 +3,8 @@
 
 require_relative 'config/application'
 
+
+task "resque:preload" => :environment
+
+
 Rails.application.load_tasks
