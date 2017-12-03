@@ -42,6 +42,7 @@ group :development, :test do
   gem 'devise'
   gem "rspec-rails"
   gem "shoulda-matchers"
+  gem "factory_girl_rails", "~> 4.0"
 end
 
 group :development do
