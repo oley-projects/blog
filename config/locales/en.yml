@@ -30,7 +30,32 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  hello!: "Hello World"
+  user_welcome: "Hello"
+
+  index:
+    hello: "Hello!"
+    welcome: "Welcome to blog"
+
+  articles:
+    articles: "Articles"
+
+    new: "New"
+    new article: "New Article"
+
+    show: "Show"
+    comments: "Comments"
+    add comment: "Add Comment"
+
+    edit: "Edit"
+    edit article: "Edit Article"
+
+    delete: "Delete"
+    delete confirm: "Are you sure?"
 
   contacts:
-    contact_us: "Contact Us!"
+    contact_us: "Contact Us"
+
+  user auth:
+    sign in: "Sign in"
+    sign out: "Sign out"

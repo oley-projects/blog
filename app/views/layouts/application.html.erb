@@ -18,13 +18,13 @@
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
       
-        <p class="navbar-text" style="width: 80px; text-align: center; background-color: #eee"><%= link_to "Articles", articles_path, class: "navbar-link" %></p>
-        <p class="navbar-text" style="width: 80px; text-align: center; background-color: #eee"><%= link_to "New", new_article_path %></p>
+        <p class="navbar-text" style="width: 80px; text-align: center; background-color: #eee"><%= link_to t('articles.articles'), articles_path, class: "navbar-link" %></p>
+        <p class="navbar-text" style="width: 80px; text-align: center; background-color: #eee"><%= link_to t('articles.new'), new_article_path %></p>
         <p class="navbar-text navbar-right" style="width: 80px; text-align: center; background-color: #eee">
             <% if user_signed_in? %>
-            Hello, <%= current_user.username %> | <%= link_to 'Sign out', destroy_user_session_path, method: :delete %> 
+            <%= t('user_welcome') %>, <%= current_user.username %> <%= link_to t('user auth.sign out'), destroy_user_session_path, method: :delete %> 
             <% else %>
-            <%= link_to 'Sign in', new_user_session_path %>
+            <%= link_to t('user auth.sign in'), new_user_session_path %>
             <%end%>
         </p>
       </div>

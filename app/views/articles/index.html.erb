@@ -1,5 +1,5 @@
 
-<h2>Articles</h2>
+<h2><%= t('articles.articles') %></h2>
 
 <br />
 	
@@ -8,9 +8,9 @@
 		<p><%= article.text %></p>
 
 		<p>
-			<%= link_to 'Show', article_path(article) %> |
-			<%= link_to 'Edit', edit_article_path(article) %> |
-			<%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: 'Are you sure?'} %>
+			<%= link_to t('articles.show'), article_path(article) %> |
+			<%= link_to t('articles.edit'), edit_article_path(article) %> |
+			<%= link_to t('articles.delete'), article_path(article), method: :delete, data: {confirm: t('articles.deleting')} %>
 		</p>
 
 <hr />
